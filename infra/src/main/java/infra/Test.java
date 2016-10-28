@@ -1,6 +1,10 @@
 package infra;
 
-public class test {
+public class Test {
+	
+	public Test(){
+		
+	}
 	
 	public void testmethod(){
 		
