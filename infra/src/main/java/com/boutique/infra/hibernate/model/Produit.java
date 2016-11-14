@@ -1,4 +1,4 @@
-package com.hibernate.model;
+package com.boutique.infra.hibernate.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -50,11 +50,11 @@ public class Produit {
 		this.categorie = categorie;
 	}
 	
-	@Override
-	public String toString() {
-		return "Produit [idProduit=" + idProduit + ", libelleProduit=" + libelleProduit + ", prix=" + prix
-				+ ", nombreVentes=" + nombreVentes + ", categorie=" + categorie + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Produit [idProduit=" + idProduit + ", libelleProduit=" + libelleProduit + ", prix=" + prix
+//				+ ", nombreVentes=" + nombreVentes + ", categorie=" + categorie + "]";
+//	}
 
 	public int getIdProduit() {
 		return idProduit;

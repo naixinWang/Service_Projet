@@ -1,9 +1,10 @@
-package com.hibernate.model;
+package com.boutique.infra.hibernate.model;
 
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -19,7 +20,7 @@ public class Categorie {
 	@Column(name = "LIBCAT")
 	private String libelleCategorie;
 	
-	@OneToMany(mappedBy = "categorie")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "categorie")
 	private List<Produit> produits;
 	
 	
