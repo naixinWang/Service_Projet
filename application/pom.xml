@@ -5,5 +5,28 @@
     <artifactId>Boutique</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
+  <version>0.0.1</version>
   <artifactId>application</artifactId>
+  
+  <dependencies>
+  
+	  <dependency>
+	  	<groupId>Groupe1</groupId>
+	  	<artifactId>infra</artifactId>
+	  	<version>0.0.1</version>
+	  </dependency>
+	  
+	  <dependency>
+	  	<groupId>Groupe1</groupId>
+	  	<artifactId>domain</artifactId>
+	  	<version>0.0.1</version>
+	  </dependency>
+	  
+	  <dependency>
+	  	<groupId>Groupe1</groupId>
+	  	<artifactId>API</artifactId>
+	  	<version>0.0.1</version>
+	  </dependency>
+  
+  </dependencies>
 </project>

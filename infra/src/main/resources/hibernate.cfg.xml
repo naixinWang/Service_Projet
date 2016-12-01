@@ -25,8 +25,8 @@
         <property name="current_session_context_class">thread</property>
         
 		<!-- Hibernate does not Scan for annotated classes at startup they have to be added manually -->
-        <mapping class="com.hibernate.model.Categorie"/>
-        <mapping class="com.hibernate.model.Produit"/>
+        <mapping class="com.boutique.infra.hibernate.model.Categorie"/>
+        <mapping class="com.boutique.infra.hibernate.model.Produit"/>
         
     </session-factory>
     

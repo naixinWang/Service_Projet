@@ -1,4 +1,4 @@
-package com.boutique.infra.dto;
+package com.boutique.api.dto;
 
 public class CategorieBean {
 

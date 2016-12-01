@@ -1,4 +1,4 @@
-package com.boutique.infra.dao;
+package com.boutique.infra.repository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,12 +8,15 @@ import javax.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.springframework.stereotype.Component;
 
-import com.boutique.infra.dto.CategorieBean;
-import com.boutique.infra.dto.ProduitBean;
+import com.boutique.api.dto.CategorieBean;
+import com.boutique.api.dto.ProduitBean;
+import com.boutique.api.irepository.IRepository;
 import com.boutique.infra.hibernate.model.Produit;
 
-public class DaoImpl {
+@Component
+public class ImplRepository implements IRepository{
 	
 	SessionFactory factory = new Configuration()
 			.configure("hibernate.cfg.xml")
@@ -23,6 +26,8 @@ public class DaoImpl {
 	Session session = factory.getCurrentSession();
 	
 	public ArrayList<ProduitBean> getProducts(){
+		// TODO Auto-generated method stub
+
 		
 		try{
 			
@@ -56,5 +61,12 @@ public class DaoImpl {
 
 		
 	}
+
+	public void buyProduct() {
+		// TODO Auto-generated method stub
+		
+		
+	}
+
 
 }

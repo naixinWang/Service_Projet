@@ -5,6 +5,7 @@
     <artifactId>Boutique</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
+  <version>0.0.1</version>
   <artifactId>infra</artifactId>
   
   <dependencies>
@@ -13,14 +14,19 @@
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-core</artifactId>
     <version>5.2.3.Final</version>
-</dependency>
+  </dependency>
 
-<dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-    <version>5.1.38</version>
-</dependency>
-
-
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>5.1.38</version>
+	</dependency>
+	
+	<dependency>
+	  	<groupId>Groupe1</groupId>
+	  	<artifactId>API</artifactId>
+	  	<version>0.0.1</version>
+	</dependency>
+	
   </dependencies>
 </project>
