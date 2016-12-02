@@ -22,6 +22,10 @@ public class App {
 		return products;
 	}
 	
+	public void acheterProduit(int idProduit){
+		repo.buyProduct(idProduit);
+	}
+	
 	
 
 }

@@ -2,6 +2,7 @@ package com.boutique.application.service;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
 public class Boot {
 	

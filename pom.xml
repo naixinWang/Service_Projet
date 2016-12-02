@@ -9,7 +9,7 @@
   	<module>infra</module>
   	<module>domain</module>
   	<module>application</module>
-  	<module>Presentation</module>
+  	<module>WebUI</module>
   	<module>API</module>
   </modules>
     
@@ -19,17 +19,27 @@
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
     </dependency>
+    
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    
     <dependency>
       <groupId>joda-time</groupId>
       <artifactId>joda-time</artifactId>
       <version>2.9.4</version>
     </dependency>
+    
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>4.3.3.RELEASE</version>
+	</dependency>
+	    
    </dependencies>
    
    <build>

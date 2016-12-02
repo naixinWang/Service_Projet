@@ -18,16 +18,30 @@ import com.boutique.infra.hibernate.model.Produit;
 @Component
 public class ImplRepository implements IRepository{
 	
-	SessionFactory factory = new Configuration()
-			.configure("hibernate.cfg.xml")
-			.addAnnotatedClass(Produit.class)
-			.buildSessionFactory();
 	
-	Session session = factory.getCurrentSession();
+//	SessionFactory factory = new Configuration()
+//			.configure("hibernate.cfg.xml")
+//			.addAnnotatedClass(Produit.class)
+//			.buildSessionFactory();
+//	
+//	Session session = factory.getCurrentSession();
 	
 	public ArrayList<ProduitBean> getProducts(){
 		// TODO Auto-generated method stub
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		SessionFactory factory = new Configuration()
+		.configure("hibernate.cfg.xml")
+		.addAnnotatedClass(Produit.class)
+		.buildSessionFactory();
 
+		Session session = factory.getCurrentSession();
+		
 		
 		try{
 			
@@ -42,7 +56,7 @@ public class ImplRepository implements IRepository{
 				bean = new ProduitBean();
 				CategorieBean cat = new CategorieBean();
 				cat.setIdCategorie(p.getCategorie().getIdCategorie());
-				cat.setLibelleCategorie(p.getLibelleProduit());
+				cat.setLibelleCategorie(p.getCategorie().getLibelleCategorie());
 				
 				bean.setIdProduit(p.getIdProduit());
 				bean.setLibelleProduit(p.getLibelleProduit());
@@ -62,8 +76,35 @@ public class ImplRepository implements IRepository{
 		
 	}
 
-	public void buyProduct() {
-		// TODO Auto-generated method stub
+	public void buyProduct(int idProduit) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		SessionFactory factory = new Configuration()
+		.configure("hibernate.cfg.xml")
+		.addAnnotatedClass(Produit.class)
+		.buildSessionFactory();
+
+		Session session = factory.getCurrentSession();
+		
+		
+		try{
+			
+			session.beginTransaction();
+			
+			Query query = session.createQuery("update Produit set nombreVentes = nombreVentes+1 where idProduit = :idPrd");
+			query.setParameter("idPrd", idProduit);
+			query.executeUpdate();
+			session.getTransaction().commit();
+			
+			
+		} finally{
+			factory.close();
+		}
 		
 		
 	}
